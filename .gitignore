@@ -1,2 +1,3 @@
-NT42DEMO/.DS_Store
-NT42DEMO/Assets.xcassets/.DS_Store
+# OS generated files
+.DS_Store
+.DS_Store?
