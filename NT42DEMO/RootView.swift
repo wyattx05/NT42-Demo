@@ -27,10 +27,8 @@ struct RootView: View {
                     .navigationDestination(for: AuthRoute.self) { route in
                         switch route {
                         case .login:
-                            // TODO: replace with LoginView()
-                            PlaceholderScreen(title: "Log In")
+                            LoginView(onSuccess: { path = [] })
                         case .register:
-                            // TODO: replace with RegisterView()
                             PlaceholderScreen(title: "Register")
                         }
                     }
