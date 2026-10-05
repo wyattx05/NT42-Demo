@@ -29,6 +29,7 @@ struct SecondaryButtonStyle: ButtonStyle {
             .foregroundStyle(AppTheme.primary)
             .frame(maxWidth: .infinity)
             .padding(.vertical, 16)
+            .contentShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
             .background(
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
                     .stroke(AppTheme.primary, lineWidth: 2)

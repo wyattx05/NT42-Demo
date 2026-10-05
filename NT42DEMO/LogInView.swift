@@ -75,7 +75,7 @@ struct LoginView: View {
 
                 VStack(spacing: 14) {
                     socialButton("Continue with Apple", icon: Image(systemName: "apple.logo"))
-                    // Add "GoogleLogo" and "FacebookLogo" images to Assets.xcassets
+                    // Add logos later
                     socialButton("Continue with Google", icon: Image("GoogleLogo"))
                     socialButton("Continue with Facebook", icon: Image("FacebookLogo"))
                 }
