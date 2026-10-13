@@ -4,6 +4,7 @@ struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var showPassword = false
+    @State private var showForgotPassword = false
     var onSuccess: () -> Void
 
     var body: some View {
@@ -52,12 +53,16 @@ struct LoginView: View {
                 }
                 .inputBox()
 
-                Button("Forgot Password?") {}
-                    .font(.footnote)
-                    .underline()
-                    .foregroundStyle(AppTheme.primary)
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                    .padding(.top, 12)
+                Button {
+                    showForgotPassword = true
+                } label: {
+                    Text("Forgot Password?")
+                        .font(.footnote)
+                        .underline()
+                        .foregroundStyle(AppTheme.primary)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                        .padding(.top, 12)
+                }
 
                 Button("Login") {
                     onSuccess()
@@ -85,6 +90,9 @@ struct LoginView: View {
             .padding(.horizontal, 28)
         }
         .navigationBarTitleDisplayMode(.inline)
+        .sheet(isPresented: $showForgotPassword) {
+            ForgotPasswordView(onSuccess: { showForgotPassword = false })
+        }
     }
 
     private func socialButton(_ title: String, icon: Image) -> some View {

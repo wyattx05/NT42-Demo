@@ -29,7 +29,7 @@ struct RootView: View {
                         case .login:
                             LoginView(onSuccess: { path = [] })
                         case .register:
-                            PlaceholderScreen(title: "Register")
+                            RegistrationView(onSuccess: { path = [] })
                         }
                     }
                 }
